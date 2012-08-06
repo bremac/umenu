@@ -53,7 +53,7 @@ let update_history entries command =
   let update_entry e = 
     if (e.command = command) then { e with count = e.count + 1 } else e
   in
-  match List.findi entries ~f:(fun _ e -> e.command = command) with
+  match List.find entries ~f:(fun e -> e.command = command) with
     | Some _ -> List.map entries update_entry
     | None -> { count = 1; command = command } :: entries;;
 
