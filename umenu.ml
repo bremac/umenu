@@ -31,8 +31,8 @@ let parse_entry s =
 let format_entry e =
   Printf.sprintf "%d %s" e.count e.command;;
 
-let compare_history_entries a b =
-  compare (-a.count, a.command) (-b.count, b.command);;
+let compare_history_entries e1 e2 =
+  compare (-e1.count, e1.command) (-e2.count, e2.command);;
 
 let read_history path line_count = 
   let lines = try_read_lines path in
