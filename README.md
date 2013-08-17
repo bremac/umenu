@@ -22,18 +22,19 @@ to build a native binary in `_build/umenu.native`.
 Running
 -------
 
-Like `dmenu_run`, umenu passes all command-line arguments through to dmenu verbatim.
-See the dmenu man page for more information.
+Like `dmenu_run`, umenu passes all command-line arguments through to dmenu
+verbatim. See the dmenu man page for more information.
 
 
 History file format
 -------------------
 
 From time to time, you may want to edit the umenu history file. The history file
-lives in `~/.local/umenu` by default. The file format is line-oriented: each line
-represents a command that has been executed. Each line contains a number, followed
-by a space and then the command. The order of commands in the file is not important
-&ndash; commands will be sorted before they are presented to the user.
+lives in `~/.umenu_history` by default. The file format is line-oriented: each
+line represents a command that has been executed. Each line contains a number,
+followed by a space and then the command. The order of commands in the file
+is not important &ndash; commands will be sorted before they are presented to
+the user.
 
 In the following example, `chromium` has been run 864 times, while `~/bin/pharo`
 has only been run 19 times:

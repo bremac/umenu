@@ -4,7 +4,7 @@ type history_entry = { count: int; command: string }
 
 exception Parse_error of string
 
-let history_path = "~/.local/umenu"
+let history_path = "~/.umenu_history"
 let history_lines = 200
 
 let space_regexp = Str.regexp " "
@@ -115,8 +115,9 @@ let update_history entries command =
 
 let save_history path entries =
   let lines = List.map format_entry entries in
-  let dir = Filename.dirname path in
-  let temppath = Filename.temp_file ~temp_dir:dir "umenu" "" in
+  let basename = Filename.basename path in
+  let dirname = Filename.dirname path in
+  let temppath = Filename.temp_file ~temp_dir:dirname basename "" in
   write_lines temppath lines;
   Unix.rename temppath path
 
