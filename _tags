@@ -1,1 +1,1 @@
-<*.ml> or "umenu.byte" or "umenu.native": package(str), package(unix)
+<*.ml> or "umenu.byte" or "umenu.native": use_str, use_unix
